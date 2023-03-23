@@ -1,0 +1,301 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+@media (max-width: 500px) {
+    .container{
+        display: flex;
+        justify-content: center;
+    }
+  }
+::-webkit-scrollbar{
+    display: none;
+}
+:root{
+    --primary-color:#755139FF;
+    --secondary-color:#D4B996FF;
+}
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(/public/images/livres.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8%;
+}
+.About{
+    width: 60%;
+    font-size: 2rem;
+    height: 60vh;
+    color: black;
+    box-shadow: 1px 1px 15px black;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    overflow: scroll;
+    
+}
+.navbar{
+    width: 100%;
+    height: 5rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
+    box-shadow: 0px 1px 15px black;
+}
+.navbar .logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    
+}
+.navbar .logo .image{
+    /* color:var(--secondary-color) ; */
+    background-image: url(/public/images/book_books.png);
+    background-size: 100% 100%;
+    height: 3rem;
+    width: 3rem;
+}
+.navbar .logo span{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-left: 5px;
+}
+.navbar .pages{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+}
+.navbar .pages .lien{
+    font-size: 1.5rem;
+    color: black;
+    transition: all 0.3s ease-in-out;
+    margin-right: 30px;
+
+}
+.navbar .pages .lien:hover{
+    color: var(--secondary-color);
+    border-bottom: 2px solid ;
+}
+
+.row1 h1{
+    font-size: 3rem;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 1px 1px 15px black;
+}
+.row2{
+    text-align: center;
+    color: #ffffff;
+}
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #24a0ed;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px black;
+}
+.search input{
+    outline: 0;
+    border: 0;
+    width: 40vw;
+    height: 60px;
+    padding: 0 0.5rem;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 10px 0px 0px 10px;
+}
+.search button{
+    outline: none;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 0px 10px 10px 0px;
+    padding: 0 0.5rem;
+    font-size: 30px;
+    transition: all 0.3s ease-in-out;
+}
+.search:hover button{
+    color:white;
+    background-color: rgb(150, 112, 76);
+    /* background-color: var(--secondary-color); */
+}
+/* .search:hover input::placeholder{
+    transition: 150ms ease-in-out;
+    color: var(--secondary-color);
+    
+} */
+.body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.container{
+    margin-top: 2rem;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
+    grid-gap:20px;
+    box-sizing: border-box;
+}
+.card{
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 1px rgba(212,185,150,.5);
+    transition: .5s;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+    height: 18rem;
+    overflow: scroll;
+    cursor: pointer;
+}
+.card:hover{
+    transform: scale(0.98);
+    background-color: rgba(255,255,255,0.8);
+    box-shadow: 0 5px 1px rgb(150, 112, 76);
+}
+.card img{
+    width: 90%;
+    height: 80%;
+    object-fit: cover;
+    border-radius:3px;
+}
+.card .bottom{
+    display: flex;
+    flex-direction: column;
+}
+.card .bottom .title{
+    font-size: 14px;
+}
+.overlay{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.overlay-inner{
+    background-color: var(--secondary-color);
+    width: 100vw;
+    height: 100vh;
+    padding: 1.5rem;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+    padding: 20px;
+}
+.overlay-inner .close{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    position: absolute;
+    top:1rem;
+    right: 1rem;
+    outline: none;
+    border: 1px solid black;
+    font-size: 24px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.overlay-inner .close:hover{
+    
+    transition: 250ms ease-in-out;
+    background-color:red;
+    color: white;
+    border-color: red;
+}
+.overlay-inner .inner-box{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.overlay-inner .inner-box img{
+    margin-right: 20px;
+    width: 170px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.overlay-inner .inner-box button{
+    outline: none;
+    border: 1px solid black;
+    background-color:  var(--secondary-color);
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+}
+.overlay-inner .inner-box button:hover{
+    
+    transition: 250ms ease-in-out;
+    background-color: #24a0ed;
+    color: white;
+    border-color: #24a0ed;
+}
+.overlay-inner .description{
+    margin-top: 2rem;
+    text-align: justify;
+    margin: 50px;
+    font-size: 15px;
+    overflow: scroll;
+}
+/* BACK TO TOP BUTTON */
+.button-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .button-back-to-top button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .button-back-to-top button:hover {
+    color:white;
+    background-color: rgb(150, 112, 76);
+  }
+  
